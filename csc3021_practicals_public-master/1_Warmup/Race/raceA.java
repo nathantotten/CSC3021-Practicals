@@ -2,12 +2,12 @@
   This program illustrates a more suble example of a race
   condition.
 
-  A Bank has 10,000 savings accounts each with £1000.
-  The total assets are threfore £10,000,000.
+  A Bank has 10,000 savings accounts each with ï¿½1000.
+  The total assets are threfore ï¿½10,000,000.
   The automatic teller machine(ATM) continuously picks two
-  accounts at random and adds £500 to one and deducts £500
+  accounts at random and adds ï¿½500 to one and deducts ï¿½500
   from the other. The totals assets should therefore remain
-  at £10,000,000. Perodically the auditor sums the Bank's assets
+  at ï¿½10,000,000. Perodically the auditor sums the Bank's assets
   and outputs the total.
 
   Study the program. Note how the bank account object is
@@ -55,7 +55,7 @@ class Auditor implements Runnable {
 
   public void run ()  {
     while(true) {
-      Time.delay(100);
+      Time1.delay(100);
       ba.totalAssets();
     }
   }

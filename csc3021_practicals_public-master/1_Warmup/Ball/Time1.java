@@ -1,4 +1,4 @@
-class Time {
+class Time1 {
     public static void delay( int msec ) {
 	// Pause thread for specified number of milliseconds
 	try {

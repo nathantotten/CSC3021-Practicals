@@ -32,13 +32,13 @@ class P1 implements Runnable {
   Random rnd = new Random();
 
   public void run ()  {
-    Time.delay(rnd.nextInt(20));
+    Time1.delay(rnd.nextInt(20));
     int temp = race.amount;
     System.out.println ("P1: Load");
-    Time.delay(rnd.nextInt(10));
+    Time1.delay(rnd.nextInt(10));
     temp = temp + 100;
     System.out.println ("P1: Increment");
-    Time.delay(rnd.nextInt(10));
+    Time1.delay(rnd.nextInt(10));
     race.amount = temp;
     System.out.println ("P1: Store");
   }
@@ -48,13 +48,13 @@ class P2 implements Runnable {
   Random rnd = new Random();
 
   public void run ()  {
-    Time.delay(rnd.nextInt(10));
+    Time1.delay(rnd.nextInt(10));
     int temp = race.amount;
     System.out.println ("P2: Load");
-    Time.delay(rnd.nextInt(10));
+    Time1.delay(rnd.nextInt(10));
     temp = temp + 200;
     System.out.println ("P2: Increment");
-    Time.delay(rnd.nextInt(10));
+    Time1.delay(rnd.nextInt(10));
     race.amount = temp;
     System.out.println ("P2: Store");
   }
@@ -63,7 +63,7 @@ class P2 implements Runnable {
 
 class Display implements Runnable {
   public void run () {
-    Time.delay (150);
+    Time1.delay (150);
     System.out.println ("amount = " + race.amount);
   }
 }

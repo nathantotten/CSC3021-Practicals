@@ -96,7 +96,7 @@ class Ball{
 				draw(Color.white);			// Clear previous position		
 				move();									// Move the ball	
 				draw(Color.black);			// Draw ball in new position
-				Time.delay(50);					// Wait 50 milliseconds
+				Time1.delay(50);					// Wait 50 milliseconds
 			}
 	}
 }

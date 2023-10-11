@@ -21,7 +21,7 @@ class raceB {
     Thread t2 = new Thread(new A(l,66));
     t1.start();
     t2.start();
-    Time.delay(200);
+    Time1.delay(200);
     System.out.println("list length = "+l.listLength());
     l.print();
   }
@@ -39,9 +39,9 @@ class list {
       tail=newElement;
     }
     else {
-      Time.delay(A.rnd.nextInt(20));
+      Time1.delay(A.rnd.nextInt(20));
       tail.next = newElement;
-      Time.delay(A.rnd.nextInt(20));
+      Time1.delay(A.rnd.nextInt(20));
       tail = newElement;
     }
   }
