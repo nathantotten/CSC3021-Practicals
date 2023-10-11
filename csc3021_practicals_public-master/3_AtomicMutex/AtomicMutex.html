@@ -1,0 +1,71 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>Welcome to Adobe GoLive 4</title>
+	</head>
+
+	<body bgcolor="#ccccff">
+		<table border="0" cellpadding="0" cellspacing="5" width="500">
+			<tr>
+				<td>
+					<center>
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>CSC321 Concurrent Programming Practical</b></font>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Mutual Exclusion
+						<hr>
+						</b></font></center>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="left">
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The aim of this practical is to gain experience of the problems associated with 'bare machine' mutual exclusion algorithms. This practical focuses on mutual exclusion algorithms using atomic operations.
+						<hr>
+						</font></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ol>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Java introduced the concurrent library (java.util.concurrent) around 2004. This library introduces, among others, atomic variables that allow multiple loads and stores to a variable to occur atomically. Study the atomics available in Java, in particular the <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a> class.
+</font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Implement a mutual exclusion algorithm following the test-and-set method described in the notes. Identify the method provided by AtomicInteger that is closest to test-and-set in the notes, and use this method to complete the skeleton program in the directory TestAndSet following the code provided in the notes.</font>
+						  <ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Try your algorithm using more than 2 threads.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Implement a mutual exclusion algorithm using ticket locks. Ticket locks are like paper tickets dispensed in shops to ensure that customers are served in the order they arrive. They may also be used to ensure mutual exclusion. The algorithm uses two shared variables, dispenser and current, both initialised to 0. The algorithms goes as follows:
+<pre>
+process P[i=1...M]
+     integer ticket, ignored;
+     while (true) {
+       nonCriticalSection;
+       fetch_and_add(dispenser,1,ticket);
+       while(ticket != current) { }
+       CriticalSection;
+       fetch_and_add(current,1,ignored)
+     }  
+</pre>
+The fetch_and_add() operation is defined as follows:
+<pre>
+fetch_and_add(var,value,old)
+  atomically do:
+  old = var;     -- fetch the old value of variable
+  var += value;  -- add value to the variable
+</pre><br>
+Implement this algorithm in Java using the appropriate AtomicInteger method. Base your solution on the skeleton program for TestAndSet.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program and observe that no two processes may enter the critical section at the same time.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program and observe that the ticket lock is fair. In fact, processes enter the critical section in the order in which the fetch_and_add() operation is scheduled in the pre-protocol.</font>
+						</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

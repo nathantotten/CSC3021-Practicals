@@ -1,0 +1,55 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>Welcome to Adobe GoLive 4</title>
+	</head>
+
+	<body bgcolor="#ccccff">
+		<table border="0" cellpadding="0" cellspacing="5" width="500">
+			<tr>
+				<td>
+					<center>
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>CSC321 Concurrent Programming Practical</b></font>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Semaphores
+						<hr>
+						</b></font></center>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="left">
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The aim of this practical is to gain experience with using semaphores. In this practical you should make use of the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html" target="csc321">Semaphore class</a> in the Java Concurrent Library (</font><font face="Courier New,Courier,Monaco">import java.util.concurrent.*;</font><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">). Note that in this class the method corresponding to up() is called release() and the method corresponding to down() is called acquire(). It is important that you study and experiment with each program.
+						<hr>
+						</font></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ol>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Implement in Java a semaphore solution to the Producer-Consumer problem. You should assume one producer, one consumer and a circular buffer.</font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Add an extra producer. Run the program and observe that mutual exclusion is now a problem. Your output should look something like the following:<br>
+						<img height="347" width="308" src="../Images/Image5145649.gif"></font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Fix the mutual exclusion problem introduced in (2). Your output should look something like:<br>
+						<img height="347" width="348" src="../Images/Image5994159.gif"></font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Modify your solution so that it can cater for multiple consumers and multiple producers.</font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Implement in Java a semaphore solution to the problem of the Dining Philosophers.</font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Implement in Java a semaphore solution to the problem of the Readers and Writers.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">First, implement the over constrained solution.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Second, implement the second solution from the lecture notes. Under what circumstances might this solution be unfair? </font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Implement in Java a semaphore solution to the problem of the Sleeping Barber.</font>
+					</ol>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

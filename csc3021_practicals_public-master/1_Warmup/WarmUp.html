@@ -1,0 +1,117 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>Welcome to Adobe GoLive 4</title>
+	</head>
+
+	<body bgcolor="#ccccff">
+		<table border="0" cellpadding="0" cellspacing="5" width="500">
+			<tr>
+				<td>
+					<center>
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>CSC321 Concurrent Programming Practical</b></font>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Warm-up exercises</b></font></center>
+				</td>
+			</tr>
+			<tr>
+				<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+					<hr>
+					This is a 'warm up' practical designed to familiarize you with:</font>
+					<ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Sun's Thread documentation;</font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">writing simple multithreaded programs;</font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">the <a href="../concurrentLib.html#time" target="csc321">Time.delay</a> and <a href="../concurrentLib.html#random" target="csc321">RandomGenerator.integer</a> methods of the <a href="../concurrentLib.html" target="csc321">Concurrent Library</a>. </font>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">some of the problems that can occur in concurrent programming, in particular, interleaving and race conditions.</font>
+					</ul>
+					<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+					<hr>
+					</font></td>
+			</tr>
+			<tr>
+				<td>
+					<ol>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Familiarize yourself with Oracle's (previously Sun) On-line Java Documentation.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Visit <a href="http://docs.oracle.com/javase/8/" target="csc321">Oracle's Java site</a>.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Go to the Java Tutorial (<a href="http://docs.oracle.com/javase/tutorial/essential/index.html">essentials</a>). In the &quot;Essential Java Classes&quot; section you will find a lesson on Threads. Study this lesson at your leisure after the practical. </font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Go to the <a href="http://docs.oracle.com/javase/8/docs/api/" target="csc321">Java API documentation</a> . Find the documentation on the Thread class. Study this class at your leisure after the practical.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Write a simple Java program with two threads. Each thread should print a different message to the console window. Implement the program: </font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">with each thread executing its own run() method (extends Thread approach); and</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">with each thread executing the run() method of a different object(implements Runnable).</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Interleave/Interleave.java" target="csc321">Interleave.java</a> illustrates the idea of a concurrent program as an interleaving of statements. </font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run it several times and observe the output.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run it again with the delay statements commented out.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Scheduler/Scheduler.java" target="csc321">Scheduler.java </a>illustrates the random nature of process scheduling.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run it several times and compare the output.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Insert a time delay into the loop, e.g. Time.delay(50), and run it several times.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Replace the time delay with Thread.yield() and run it several times.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Race/race.java" target="csc321">race.java</a> illustrates a simple example of a race condition.
+						<table border="2" cellpadding="0" cellspacing="2" width="417" bgcolor="white">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The variable amount is shared by both processes. Amount is initialised to 100. One process performs amount=amount+100, while the other performs amount=amount+200.</font></td>
+							</tr>
+						</table>
+						</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Study the program. What are the three possible final values of amount ?</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run it several times and see if you can produce all three outputs. </font>
+						</ul>
+						<div align="left">
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Race/raceA.java" target="csc321">raceA.java</a> illustrates a more suble example of a race condition.
+							<table border="2" cellpadding="0" cellspacing="0" width="421" bgcolor="white">
+								<tr>
+									<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">A Bank has 10,000 savings accounts each with &pound;1000. The total assets are threfore &pound;10,000,000. The automatic teller machine(ATM) continuously picks two accounts at random and adds &pound;500 to one and deducts &pound;500 from the other. The totals assets should therefore remain at &pound;10,000,000. Perodically the auditor sums the Bank's assets and outputs the total.</font></td>
+								</tr>
+							</table>
+							</font></div>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Study the program. Note how the bank account object is shared by both threads.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program several times and observe the output. Use &lt;ctrl&gt;C to terminate the program.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program<a href="Race/raceB.java" target="csc321"> raceB.java</a> illustrates another example of a race condition.
+						<table border="4" cellpadding="0" cellspacing="2" width="431" bgcolor="white">
+							<tr>
+								<td><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Two threads attemps to add a different element to the end of a list at approximately the same time.</font></td>
+							</tr>
+						</table>
+						</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Study the program. What are the four possible outputs ?</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program several times and try and produce all four outputs. </font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Single_Buffer_Examples/Example1/Example1.java" target="csc321">Example1.java </a>is a naive approach to the implementation of a single-number buffer accessed by a producer thread and a consumer thread. Experiment by:</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">running it several times and observing the last two numbers obtained by the consumer;</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">using different values of MAX_NUMBER;</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">starting the consumer before the producer.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">In program<a href="Single_Buffer_Examples/Example2/Example2.java" target="csc321"> Example2.java</a> an attempt is made to coordinate the activitiy of the producer and consumer processes via a global variable called 'turn'. </font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Study the program, run it several times and observe the output.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">What happens if: </font>
+							<ul>
+								<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">the Producer thread dies ?; or</font>
+								<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">the priority of the Producer &gt; the priority of the Consumer ?</font>
+							</ul>
+						</ul>
+					</ol>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

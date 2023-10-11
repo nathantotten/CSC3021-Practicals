@@ -1,0 +1,63 @@
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="Adobe GoLive 4">
+		<title>Welcome to Adobe GoLive 4</title>
+	</head>
+
+	<body bgcolor="#ccccff">
+		<table border="0" cellpadding="0" cellspacing="5" width="500">
+			<tr>
+				<td>
+					<center>
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>CSC321 Concurrent Programming Practical</b></font>
+						<p><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular"><b>Mutual Exclusion
+						<hr>
+						</b></font></center>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div align="left">
+						<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The aim of this practical is to gain experience of the problems associated with 'bare machine' mutual exclusion algorithms. It is important that you study and experiment with each program.
+						<hr>
+						</font></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ol>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Attempt1/Attempt1.java" target="csc321">Attempt1.java</a> is the first attempt at a mutal exclusion solution. This solution has all of the desired properties except for correct behaviour in the absence of contention.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program and observe that there is no interleaving of instructions in critical sections.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Remove the comments in the methods and run the program again. Note that some instructions (which ones ?) from one process can be interleaved with instructions in the other process's critical section.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Call the killMe method from thread1's nonCritcal section. Observe the starvation of thread2.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Attempt2/Attempt2.java" target="csc321">Attempt2.java</a> is the second attempt at a mutual exclusion solution. </font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program and observe that it does not prevent two processes entering critical sections at the same time.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Attempt3/Attempt3.java" target="csc321">Attempt3.java</a> is the third attempt at a mutal exclusion solution.This algorithm can deadlock.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program and observe that mutual exclusion is satisified.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Remove the comments. The yield instruction should force interleaving in the preProtocols resulting in deadlock.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">The program <a href="Attempt4/Attempt4.java" target="csc321">Attempt4.java</a> is the fourth attempt at a mutal exclusion solution.This algorithm can livelock.</font>
+						<ul>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Run the program and observe livelock.</font>
+							<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Remove the comments in the preProtocol loop. Run the program and observe that mutual exclusion is satisfied.</font>
+						</ul>
+						<li><font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">Write a program to solve the mutual exclusion algorithm for two processes using Dekker's algorithm. As with the previous four attempts, insert print statements throughout, and experiment with the program. </font>
+					</ol>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<hr>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

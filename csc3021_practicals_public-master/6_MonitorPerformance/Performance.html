@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+    <title>Performance Measurement of Concurrent Programs</title>
+  </head>
+  
+  <body bgcolor="#ccccff">
+    <table border="0" cellpadding="0" cellspacing="5" width="500">
+      <tr>
+	<td>
+	  <center>
+	    <b>CSC321 Concurrent Programming Practical</b>
+	    <p><b>Throughput of Concurrent Queues (Producer/Consumer Problem)
+		<hr>
+	  </b></center>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <div align="left">
+	    The aim of this practical is to gain experience with measuring and interpreting performance of concurrent programs. In many instances, the benefits of concurrency follow from reduced latency (response-time) or increased throughput. Measuring performance is part of the validation of a successful application of concurrency.
+	    <p>In this practical we will see illustrated that different styles of concurrent programming (bare machine algorithms, monitors and Java concurrent library implementations) can indeed affect the performance of a concurrent program.
+	    <p>You will also develop skills related to observing performance differences and explaining those on the basis of your understanding of concurrent programming.
+	    <hr>
+	  </div>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <p>The program <a href="Code/Driver.java" target="csc321">Driver.java</a> contains a skeleton for measuring the performance of a concurrent synchronisation pattern. In this case, two variations of a producer/consumer queue are implemented in the code. The program allows to select one of these implementations. It launches a configurable number of producer and consumer threads that together perform a number of get and put operations on the queue. The delay for performing these put and get operations is measured. The experiment is then repeated a number of times to capture variations in execution, which are due, among others, to the Java scheduler and the operating system, but possibly also due to network traffic and other applications you have running as these take away an unpredictable amount of CPU time.
+	  <p>The program can be called with following command-line arguments:<br><pre>Driver num_producers num_consumers buffer_size queue_type num_putget rounds</pre>
+	  <p>For instance, <pre>Driver 1 1 64 1 2500000 5</pre> executes the program with 1 producer thread, 1 consumer thread, a queue with 64-element buffer implemented using Java monitor techniques (type 1). The experiment consists of calling put and get 2,500,000 times. It is repeated 5 times to average out performance variation. Try to run the program and verify the program output. Adjust the number of put and get operations executed such that a single experiment takes about 1 second on the computer that you are using. This is important so that you get reliable measurements, but the measurements themselves do not take too long.
+
+	  <p>The program also reports standard deviation over the experiments, which is a measure of reliability of the measurements (smaller values indicate that results are more consistent).
+
+	  <p>In this practical we will use and extend this program to get an understanding of the relative performance of different styles of concurrent programming (bare machine algorithms, monitors and Java 7 java.util.concurrent algorithms).
+	  <ol>
+	    <li>For the monitor-style queue (type=1), investigate the impact of the buffer size on throughput (the rate of operations). To this end, call the program multiple times with 1 producer, 1 consumer and by varying the buffer size. While varying the buffer size, keep an eye on the average execution time per experiment. It should stay around 1 second, so increase or decrease this parameter as you go along.
+	      <ul>
+		<li>Record your results in the <a href="./measurements.xlsx">Excel sheet</a>, sheet '1P1C-1', provided with this material.
+		<li>How fast can you make the program run by changing this parameter? What values give best performance? Why do you think this is?
+	      </ul>
+
+	    <li>Continuing with the monitor-style queue (type=1), repeat the experiment above but now with 2 producer threads and 2 consumer threads. Record these numbers on sheet 'nPnC-nB'. What has happened? How can this result be explained? Complete the sheet with measurements for 4 producers/consumers and 8 producers/consumers as well.
+
+	    <li>Now select a queue size that gives you good performance in the previous experiments. Now vary the number of producers and consumers over a wide range and record the results in sheet 'nPnC'. How much is throughput affected? Determine the point where throughput starts to level off.
+
+	    <li>Next we will compare the performance of different implementations. The driver program contains queue implementations built on the Java queue type <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/LinkedBlockingQueue.html">LinkedBlockingQueue</a> provided in the java.util.concurrent library. This class has 3 distinct interfaces: one non-blocking interface that throws exceptions on full/empty conditions, one non-blocking interface that returns special values and one blocking interface. We will focus on the blocking interface. We have provided 2 queue implementations: queue type 3 in the driver program uses a bounded LinkedBlockingQueue, while type 4 uses an unbounded capacity LinkedBlockingQueue.
+
+	      <ul>
+		<li>Repeat the experiment with 1 producer and 1 consumer thread for queue type 3, again varying the buffer size. Adjust the number of put and get operations per experiment as required. Record your measurements in sheet '1P1C-2' of the Excel file and compare against the prior measurements which are copied over. Can you explain this result?
+		<li>Repeat the experiment for queue type 4. Note that the queue is now unbounded, so the buffer size parameter is unused and one experiment fully characterises this implementation. Adjust the number of put and get operations per experiment as required. Again, record your measurements and explain the result.
+
+		<li>Now consider scalability of these queues for a higher number of threads. Select an appropriate buffer size and measure the performance for increasing numbers of producers and consumers. Record your measurement in the Excel sheet (sheet 'nPnC-2'). How do the LinkedBlockingQueue examples fare against the Monitor implementation?
+	      </ul>
+
+	    <li>Next we will compare against a highly specialised implementation using bare machine instructions (type=2). This variant only works correctly for a single producer and a single consumer.
+	      <ul>
+		<li>Analyse the source code (class SPSCQueue) and identify why the code is only valid for one producer and one consumer. Do you see any other functional limitations in this implementation?
+		<li>Repeat the experiment with 1 producer and 1 consumer thread for queue type 2, again varying the buffer size (sheet '1P1C-3'). Adjust the number of put and get operations per experiment as required. Record your measurements and compare against the prior measurements. Can you explain this result?
+	      </ul>
+	  </ol>
+	</td>
+      </tr>
+      <tr>
+	<td>
+	  <hr>
+	</td>
+      </tr>
+    </table>
+  </body>
+</html>
