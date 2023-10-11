@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/1_Warmup/1_Warmup.iml" filepath="$PROJECT_DIR$/1_Warmup/1_Warmup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2_MutualExclusion/2_MutualExclusion.iml" filepath="$PROJECT_DIR$/2_MutualExclusion/2_MutualExclusion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3_AtomicMutex/3_AtomicMutex.iml" filepath="$PROJECT_DIR$/3_AtomicMutex/3_AtomicMutex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4_Semaphores/4_Semaphores.iml" filepath="$PROJECT_DIR$/4_Semaphores/4_Semaphores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5_Monitors/5_Monitors.iml" filepath="$PROJECT_DIR$/5_Monitors/5_Monitors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/6_MonitorPerformance/6_MonitorPerformance.iml" filepath="$PROJECT_DIR$/6_MonitorPerformance/6_MonitorPerformance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1_Warmup/Single_Buffer_Examples/Single_Buffer_Examples.iml" filepath="$PROJECT_DIR$/1_Warmup/Single_Buffer_Examples/Single_Buffer_Examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/csc3021_practicals_public-master.iml" filepath="$PROJECT_DIR$/.idea/csc3021_practicals_public-master.iml" />
+    </modules>
+  </component>
+</project>
