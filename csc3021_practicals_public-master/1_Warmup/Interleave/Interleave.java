@@ -8,7 +8,7 @@
 
 import java.util.Random;
 
-class Time {
+class Time2 {
   public static void delay( int msec ) {
     // Pause thread for specified number of milliseconds
     try {
@@ -26,9 +26,9 @@ class Interleave {
 
   public static void main (String[] args) {
 
-    Thread p1 = new P1 () ;
-    Thread p2 = new P2 () ;
-    Thread display = new Display ();
+    Thread p1 = new P1_interleave() ;
+    Thread p2 = new P2_interleave() ;
+    Thread display = new Display_interleave();
 
     p2.start () ;
     p1.start () ;
@@ -36,7 +36,7 @@ class Interleave {
   }
 }
 
-class P1 extends Thread {
+class P1_interleave extends Thread {
   public void run ()  {
     Random rnd = new Random();
     //Time.delay(rnd.nextInt(20));
@@ -45,7 +45,7 @@ class P1 extends Thread {
   }
 }
 
-class P2 extends Thread {
+class P2_interleave extends Thread {
   public void run () {
     Random rnd = new Random();
     //Time.delay(rnd.nextInt(20));
@@ -55,7 +55,7 @@ class P2 extends Thread {
 }
 
 
-class Display extends Thread {
+class Display_interleave extends Thread {
   public void run () {
     //Time.delay(100);
     System.out.println ("c1 = " + Interleave.c1 + "    c2 = " + Interleave.c2);

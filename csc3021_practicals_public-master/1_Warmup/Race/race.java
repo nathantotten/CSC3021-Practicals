@@ -19,7 +19,7 @@ class race {
 
     Thread p1 = new Thread(new P1 ()) ;
     Thread p2 = new Thread(new P2 ()) ;
-    Thread display = new Thread (new Display());
+    Thread display = new Thread (new Display_interleave());
 
     p1.start () ;
     p2.start () ;
